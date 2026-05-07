@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web design and video editing for brands that want to stand out. Based in Sofia, Bulgaria.">
+  <title>Daren Gotsak — Web Design &amp; Video Editing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <nav class="navbar__inner">
+      <a href="#" class="navbar__logo">DG</a>
+      <ul class="navbar__links" role="list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <div class="navbar__divider" aria-hidden="true"></div>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="menu-overlay" id="mobile-menu" role="dialog" aria-label="Navigation" aria-hidden="true">
+    <button class="menu-overlay__close" aria-label="Close menu">&#x2715;</button>
+    <nav>
+      <ul class="menu-overlay__links" role="list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero__content">
+        <p class="hero__location">Web Designer &middot; Video Editor &middot; Sofia, BG</p>
+        <h1 class="hero__headline">Built for <em>results.</em></h1>
+        <p class="hero__subtitle">Web design and video editing for brands that want to stand out.</p>
+        <div class="hero__ctas">
+          <a href="#work" class="hero__cta">&#x2192; See work</a>
+          <a href="#videos" class="hero__cta">&#x2192; Watch videos</a>
+        </div>
+      </div>
+      <div class="hero__portrait" role="img" aria-label="Portrait placeholder"></div>
+    </section>
+
+    <!-- ===== WORK ===== -->
+    <section id="work" class="section work reveal">
+      <div class="section__label">
+        <span class="section__line" aria-hidden="true"></span>
+        <span class="section__text">01 / Selected Work</span>
+      </div>
+      <h2 class="section__headline">Recent web <em>projects.</em></h2>
+
+      <div class="work__stack">
+
+        <a href="https://cafe.darengotsak.com" target="_blank" rel="noopener" class="project-card">
+          <div class="project-card__image">
+            <img src="images/work/cafe.darengotsak.com_.png" alt="NORD Cafe — landing page preview" loading="lazy">
+          </div>
+          <div class="project-card__meta">
+            <span class="project-card__number">01</span>
+            <h3 class="project-card__name">NORD Cafe <span class="project-card__arrow" aria-hidden="true">&#x2197;</span></h3>
+            <p class="project-card__desc">Editorial landing page for a fictional specialty coffee bar.</p>
+            <p class="project-card__tags">HTML &#xB7; CSS &#xB7; JavaScript &#xB7; Editorial Design</p>
+          </div>
+        </a>
+
+        <a href="https://pulse.darengotsak.com" target="_blank" rel="noopener" class="project-card">
+          <div class="project-card__image">
+            <img src="images/work/pulse.darengotsak.com_.png" alt="PULSE — SaaS landing preview" loading="lazy">
+          </div>
+          <div class="project-card__meta">
+            <span class="project-card__number">02</span>
+            <h3 class="project-card__name">PULSE <span class="project-card__arrow" aria-hidden="true">&#x2197;</span></h3>
+            <p class="project-card__desc">SaaS landing page for a fictional productivity app — dark mode, conversion-focused.</p>
+            <p class="project-card__tags">HTML &#xB7; CSS &#xB7; JavaScript &#xB7; UI Design</p>
+          </div>
+        </a>
+
+        <a href="https://aura.darengotsak.com" target="_blank" rel="noopener" class="project-card">
+          <div class="project-card__image">
+            <img src="images/work/aura.darengotsak.com_.png" alt="AURA ONE — product page preview" loading="lazy">
+          </div>
+          <div class="project-card__meta">
+            <span class="project-card__number">03</span>
+            <h3 class="project-card__name">AURA ONE <span class="project-card__arrow" aria-hidden="true">&#x2197;</span></h3>
+            <p class="project-card__desc">Editorial product page for a premium headphone brand — luxury aesthetic.</p>
+            <p class="project-card__tags">HTML &#xB7; CSS &#xB7; JavaScript &#xB7; Visual Design</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ===== VIDEOS ===== -->
+    <section id="videos" class="section videos reveal">
+      <div class="section__label">
+        <span class="section__line" aria-hidden="true"></span>
+        <span class="section__text">02 / Video Work</span>
+      </div>
+      <h2 class="section__headline">Edits that <em>move.</em></h2>
+      <p class="videos__subhead">Short-form content for marketing, entertainment, and AI-generated formats.</p>
+
+      <div class="videos__groups">
+
+        <div class="video-group">
+          <span class="video-group__label">Marketing</span>
+          <div class="video-grid">
+            <div class="video-item">
+              <video controls playsinline src="videos/marketing-01.mp4" poster="videos/posters/marketing-01.jpg">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-item__caption">Marketing edit 01</p>
+            </div>
+            <div class="video-item">
+              <video controls playsinline src="videos/marketing-02.mp4" poster="videos/posters/marketing-02.jpg">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-item__caption">Marketing edit 02</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-group">
+          <span class="video-group__label">Entertainment</span>
+          <div class="video-grid">
+            <div class="video-item">
+              <video controls playsinline src="videos/entertainment-01.mp4" poster="videos/posters/entertainment-01.jpg">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-item__caption">Entertainment edit 01</p>
+            </div>
+            <div class="video-item">
+              <video controls playsinline src="videos/entertainment-02.mp4" poster="videos/posters/entertainment-02.jpg">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-item__caption">Entertainment edit 02</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-group">
+          <span class="video-group__label">AI-Generated</span>
+          <div class="video-grid">
+            <div class="video-item">
+              <video controls playsinline src="videos/ai-01.mp4" poster="videos/posters/ai-01.jpg">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-item__caption">AI edit 01</p>
+            </div>
+            <div class="video-item">
+              <video controls playsinline src="videos/ai-02.mp4" poster="videos/posters/ai-02.jpg">
+                Your browser does not support the video tag.
+              </video>
+              <p class="video-item__caption">AI edit 02</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about reveal">
+      <div class="about__left">
+        <div class="section__label">
+          <span class="section__line" aria-hidden="true"></span>
+          <span class="section__text">03 / About</span>
+        </div>
+        <h2 class="section__headline">Sofia-based. <em>Detail-obsessed.</em></h2>
+      </div>
+      <div class="about__right">
+        <p>I'm Daren — a web designer and video editor based in Sofia, Bulgaria. I build clean, editorial-feeling websites and cut sharp short-form video for brands that want their work to feel intentional.</p>
+        <p>Available for freelance projects worldwide. I charge based on the project scope and timeline. I have a fluid workflow so communication is key. You can reach out to me for a free consultation and wireframe of your project.</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact reveal">
+      <div class="contact__inner">
+        <div class="section__label">
+          <span class="section__line" aria-hidden="true"></span>
+          <span class="section__text">04 / Contact</span>
+        </div>
+        <h2 class="contact__headline">Let's work <em>together.</em></h2>
+        <a href="mailto:hello@darengotsak.com" class="contact__email">dgotsak@gmail.com</a>
+        <div class="contact__social">
+          <a href="https://www.upwork.com/freelancers/~01bab264703da19496" target="_blank" rel="noopener" class="contact__social-link">Upwork</a>
+          <a href="https://github.com/darengotsak" target="_blank" rel="noopener" class="contact__social-link">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <span class="footer__name">Daren Gotsak</span>
+    <span class="footer__copy">&#xA9; 2026</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
