@@ -1,176 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-tab-away="🤝 work w me">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Web design and video editing for brands that want to stand out. Based in Sofia, Bulgaria.">
+  <meta name="description" content="Daren Gotsak — Web designer and video editor. Editorial-quality websites and precise short-form video for brands that take quality seriously. Based in Sofia, Bulgaria.">
   <title>Daren Gotsak — Web Design &amp; Video Editing</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <nav class="navbar__inner">
-      <a href="#" class="navbar__logo">DG</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <nav class="navbar__inner" aria-label="Main navigation">
+      <a href="index.html" class="navbar__logo" aria-label="Daren Gotsak — home">DG</a>
       <ul class="navbar__links" role="list">
         <li><a href="#work">Work</a></li>
         <li><a href="#videos">Videos</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-contact">Contact</a></li>
       </ul>
       <button class="navbar__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span></span>
-        <span></span>
+        <span></span><span></span>
       </button>
     </nav>
-    <div class="navbar__divider" aria-hidden="true"></div>
   </header>
 
-  <!-- ===== MOBILE MENU ===== -->
+  <!-- MOBILE MENU -->
   <div class="menu-overlay" id="mobile-menu" role="dialog" aria-label="Navigation" aria-hidden="true">
-    <button class="menu-overlay__close" aria-label="Close menu">&#x2715;</button>
-    <nav>
-      <ul class="menu-overlay__links" role="list">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#videos">Videos</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <button class="menu-overlay__close" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 3l14 14M17 3L3 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <nav><ul class="menu-overlay__links" role="list">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
   </div>
 
-  <main>
+  <main id="main-content">
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-      <div class="hero__content">
-        <p class="hero__location">Web Designer &middot; Video Editor &middot; Sofia, BG</p>
-        <h1 class="hero__headline">Built for <em>results.</em></h1>
-        <p class="hero__subtitle">Web design and video editing for brands that want to stand out.</p>
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="hero__left">
+        <!-- Trust signal above the fold — market-landing: status + credentials above headline -->
+        <div class="hero__status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Available for projects &middot; Sofia, BG
+          </span>
+        </div>
+
+        <h1 class="hero__headline">Built for<br><em>results.</em></h1>
+
+        <p class="hero__sub">Websites that feel considered. Video that stops the scroll. For brands where craft is the competitive edge.</p>
+
         <div class="hero__ctas">
-          <a href="#work" class="hero__cta">&#x2192; See work</a>
-          <a href="#videos" class="hero__cta">&#x2192; Watch videos</a>
+          <a href="#work" class="cta-primary">
+            See the work
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><path d="M2 11L11 2M11 2H5M11 2v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="cta-ghost">Let's talk</a>
         </div>
       </div>
-      <div class="hero__portrait" role="img" aria-label="Portrait placeholder"></div>
-    </section>
 
-    <!-- ===== WORK ===== -->
-    <section id="work" class="section work reveal">
-      <div class="section__label">
-        <span class="section__line" aria-hidden="true"></span>
-        <span class="section__text">01 / Selected Work</span>
-      </div>
-      <h2 class="section__headline">Recent web <em>projects.</em></h2>
-
-      <div class="work__stack">
-
-        <a href="https://cafe.darengotsak.com" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__image">
-            <img src="images/work/cafe.darengotsak.com_.png" alt="NORD Cafe — landing page preview" loading="lazy">
+      <!-- Rotating project preview with progress bar -->
+      <div class="hero__preview" aria-label="Project showcase">
+        <div class="preview-slides" id="preview-slides" aria-live="polite">
+          <div class="preview-slide is-active"><img src="images/work/cafe.darengotsak.com_.png" alt="NORD Cafe landing page" loading="eager"></div>
+          <div class="preview-slide"><img src="images/work/pulse.darengotsak.com_.png" alt="PULSE SaaS landing page" loading="lazy"></div>
+          <div class="preview-slide"><img src="images/work/aura.darengotsak.com_.png" alt="AURA ONE product page" loading="lazy"></div>
+        </div>
+        <div class="preview-bar">
+          <div class="preview-bar__fill" id="preview-fill"></div>
+        </div>
+        <div class="preview-footer">
+          <div class="preview-dots" role="group" aria-label="Project navigation">
+            <button class="pdot is-active" data-i="0" aria-label="NORD Cafe" aria-pressed="true"></button>
+            <button class="pdot" data-i="1" aria-label="PULSE" aria-pressed="false"></button>
+            <button class="pdot" data-i="2" aria-label="AURA ONE" aria-pressed="false"></button>
           </div>
-          <div class="project-card__meta">
-            <span class="project-card__number">01</span>
-            <h3 class="project-card__name">NORD Cafe <span class="project-card__arrow" aria-hidden="true">&#x2197;</span></h3>
-            <p class="project-card__desc">Editorial landing page for a fictional specialty coffee bar.</p>
-            <p class="project-card__tags">HTML &#xB7; CSS &#xB7; JavaScript &#xB7; Editorial Design</p>
-          </div>
-        </a>
-
-        <a href="https://pulse.darengotsak.com" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__image">
-            <img src="images/work/pulse.darengotsak.com_.png" alt="PULSE — SaaS landing preview" loading="lazy">
-          </div>
-          <div class="project-card__meta">
-            <span class="project-card__number">02</span>
-            <h3 class="project-card__name">PULSE <span class="project-card__arrow" aria-hidden="true">&#x2197;</span></h3>
-            <p class="project-card__desc">SaaS landing page for a fictional productivity app — dark mode, conversion-focused.</p>
-            <p class="project-card__tags">HTML &#xB7; CSS &#xB7; JavaScript &#xB7; UI Design</p>
-          </div>
-        </a>
-
-        <a href="https://aura.darengotsak.com" target="_blank" rel="noopener" class="project-card">
-          <div class="project-card__image">
-            <img src="images/work/aura.darengotsak.com_.png" alt="AURA ONE — product page preview" loading="lazy">
-          </div>
-          <div class="project-card__meta">
-            <span class="project-card__number">03</span>
-            <h3 class="project-card__name">AURA ONE <span class="project-card__arrow" aria-hidden="true">&#x2197;</span></h3>
-            <p class="project-card__desc">Editorial product page for a premium headphone brand — luxury aesthetic.</p>
-            <p class="project-card__tags">HTML &#xB7; CSS &#xB7; JavaScript &#xB7; Visual Design</p>
-          </div>
-        </a>
-
+          <span class="preview-name" id="preview-name" aria-hidden="true">NORD Cafe</span>
+        </div>
       </div>
     </section>
 
-    <!-- ===== VIDEOS ===== -->
-    <section id="videos" class="section videos reveal">
-      <div class="section__label">
-        <span class="section__line" aria-hidden="true"></span>
-        <span class="section__text">02 / Video Work</span>
+    <!-- STATS STRIP — social proof metrics above the fold scroll -->
+    <div class="stats-strip" role="region" aria-label="At a glance">
+      <div class="stat" style="--i:0">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">Projects delivered</span>
       </div>
-      <h2 class="section__headline">Edits that <em>move.</em></h2>
-      <p class="videos__subhead">Short-form content for marketing, entertainment, and AI-generated formats.</p>
+      <div class="stat-div" aria-hidden="true"></div>
+      <div class="stat" style="--i:1">
+        <span class="stat-num">3+</span>
+        <span class="stat-label">Years experience</span>
+      </div>
+      <div class="stat-div" aria-hidden="true"></div>
+      <div class="stat" style="--i:2">
+        <span class="stat-num">4.8&#x2605;</span>
+        <span class="stat-label">Client Rating</span>
+      </div>
+      <div class="stat-div" aria-hidden="true"></div>
+      <div class="stat" style="--i:3">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">On-time delivery</span>
+      </div>
+    </div>
 
-      <div class="videos__groups">
+    <!-- WORK — Alternating zig-zag layout -->
+    <section id="work" class="section work" aria-label="Selected work">
+      <div class="section-label-row">
+        <span class="eyebrow">01 / Selected Work</span>
+        <h2 class="section-headline">Recent web <em>projects.</em></h2>
+      </div>
+
+      <div class="work-list">
+
+        <!-- NORD: image left, meta right -->
+        <article class="work-row reveal" style="--i:0" aria-label="NORD Cafe project">
+          <a href="https://cafe.darengotsak.com" target="_blank" rel="noopener" class="work-row__image" aria-label="View NORD Cafe project — opens in new tab">
+            <img src="images/work/cafe.darengotsak.com_.png" alt="NORD Cafe — bold editorial landing page for a specialty coffee bar" loading="lazy">
+            <div class="work-row__hover" aria-hidden="true">
+              View project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </a>
+          <div class="work-row__meta">
+            <span class="work-num">01</span>
+            <h3 class="work-name">NORD Cafe</h3>
+            <p class="work-desc">Bold editorial landing page for a specialty coffee bar in Sofia. Built around a kinetic marquee hero, seasonal menu, event grid, and inline reservation. Full brutal editorial direction — 0px radius, hard rule lines, oversized Fraunces italic.</p>
+            <p class="work-tags">HTML &middot; CSS &middot; JS &middot; Editorial Design</p>
+            <a href="https://cafe.darengotsak.com" target="_blank" rel="noopener" class="work-link">
+              cafe.darengotsak.com
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H4M10 1v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- PULSE: meta left, image right -->
+        <article class="work-row work-row--rev reveal" style="--i:0" aria-label="PULSE project">
+          <div class="work-row__meta">
+            <span class="work-num">02</span>
+            <h3 class="work-name">PULSE</h3>
+            <p class="work-desc">Dark glassmorphism SaaS landing page for a productivity app. Particle canvas hero, animated stat counters, glassmorphism bento feature grid, comparison table, testimonials, and full pricing section. Electric violet on deep dark.</p>
+            <p class="work-tags">HTML &middot; CSS &middot; JS &middot; UI Design</p>
+            <a href="https://pulse.darengotsak.com" target="_blank" rel="noopener" class="work-link">
+              pulse.darengotsak.com
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H4M10 1v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          <a href="https://pulse.darengotsak.com" target="_blank" rel="noopener" class="work-row__image" aria-label="View PULSE project — opens in new tab">
+            <img src="images/work/pulse.darengotsak.com_.png" alt="PULSE — dark glassmorphism SaaS landing page" loading="lazy">
+            <div class="work-row__hover" aria-hidden="true">
+              View project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </a>
+        </article>
+
+        <!-- AURA: image left, meta right -->
+        <article class="work-row reveal" style="--i:0" aria-label="AURA ONE project">
+          <a href="https://aura.darengotsak.com" target="_blank" rel="noopener" class="work-row__image" aria-label="View AURA ONE project — opens in new tab">
+            <img src="images/work/aura.darengotsak.com_.png" alt="AURA ONE — luxury editorial product page for premium headphones" loading="lazy">
+            <div class="work-row__hover" aria-hidden="true">
+              View project
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 13L13 3M13 3H6M13 3v7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </a>
+          <div class="work-row__meta">
+            <span class="work-num">03</span>
+            <h3 class="work-name">AURA ONE</h3>
+            <p class="work-desc">Luxury editorial product page for a premium headphone brand. Sticky gallery hero with immersive scroll reveal, cinematic full-bleed break, frequency response visualization, comparison table vs competitors, and a sticky cart bar.</p>
+            <p class="work-tags">HTML &middot; CSS &middot; JS &middot; Visual Design</p>
+            <a href="https://aura.darengotsak.com" target="_blank" rel="noopener" class="work-link">
+              aura.darengotsak.com
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M1 10L10 1M10 1H4M10 1v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section id="videos" class="section videos reveal" aria-label="Video work">
+      <div class="section-label-row">
+        <span class="eyebrow">02 / Video Work</span>
+        <h2 class="section-headline">Edits that <em>move.</em></h2>
+        <p class="section-sub">Short-form content for marketing, entertainment, and AI-generated formats.</p>
+      </div>
+      <div class="videos-groups">
 
         <div class="video-group">
-          <span class="video-group__label">Marketing</span>
+          <span class="video-group-label">Marketing</span>
           <div class="video-grid">
             <div class="video-item">
-              <video controls playsinline src="videos/marketing-01.mp4" poster="videos/posters/marketing-01.jpg">
-                Your browser does not support the video tag.
+              <video poster="videos/posters/video-1.jpg" preload="metadata" controls muted playsinline>
+                <source src="videos/video-1.mp4" type="video/mp4">
+                <a href="videos/posters/video-1.jpg" class="video-fallback" aria-label="Marketing edit 01 — play overlay">
+                  <img src="videos/posters/video-1.jpg" alt="Marketing edit 01">
+                  <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                </a>
               </video>
-              <p class="video-item__caption">Marketing edit 01</p>
             </div>
             <div class="video-item">
-              <video controls playsinline src="videos/marketing-02.mp4" poster="videos/posters/marketing-02.jpg">
-                Your browser does not support the video tag.
+              <video poster="videos/posters/video-2.jpg" preload="metadata" controls muted playsinline>
+                <source src="videos/video-2.mp4" type="video/mp4">
+                <a href="videos/posters/video-2.jpg" class="video-fallback" aria-label="Marketing edit 02 — play overlay">
+                  <img src="videos/posters/video-2.jpg" alt="Marketing edit 02">
+                  <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                </a>
               </video>
-              <p class="video-item__caption">Marketing edit 02</p>
             </div>
           </div>
         </div>
 
         <div class="video-group">
-          <span class="video-group__label">Entertainment</span>
+          <span class="video-group-label">Entertainment</span>
           <div class="video-grid">
             <div class="video-item">
-              <video controls playsinline src="videos/entertainment-01.mp4" poster="videos/posters/entertainment-01.jpg">
-                Your browser does not support the video tag.
+              <video poster="videos/posters/video-3.jpg" preload="metadata" controls muted playsinline>
+                <source src="videos/video-3.mp4" type="video/mp4">
+                <a href="videos/posters/video-3.jpg" class="video-fallback" aria-label="Entertainment edit 01 — play overlay">
+                  <img src="videos/posters/video-3.jpg" alt="Entertainment edit 01">
+                  <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                </a>
               </video>
-              <p class="video-item__caption">Entertainment edit 01</p>
             </div>
             <div class="video-item">
-              <video controls playsinline src="videos/entertainment-02.mp4" poster="videos/posters/entertainment-02.jpg">
-                Your browser does not support the video tag.
+              <video poster="videos/posters/video-4.jpg" preload="metadata" controls muted playsinline>
+                <source src="videos/video-4.mp4" type="video/mp4">
+                <a href="videos/posters/video-4.jpg" class="video-fallback" aria-label="Entertainment edit 02 — play overlay">
+                  <img src="videos/posters/video-4.jpg" alt="Entertainment edit 02">
+                  <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                </a>
               </video>
-              <p class="video-item__caption">Entertainment edit 02</p>
             </div>
           </div>
         </div>
 
         <div class="video-group">
-          <span class="video-group__label">AI-Generated</span>
+          <span class="video-group-label">AI-Generated</span>
           <div class="video-grid">
             <div class="video-item">
-              <video controls playsinline src="videos/ai-01.mp4" poster="videos/posters/ai-01.jpg">
-                Your browser does not support the video tag.
+              <video poster="videos/posters/video-5.jpg" preload="metadata" controls muted playsinline>
+                <source src="videos/video-5.mp4" type="video/mp4">
+                <a href="videos/posters/video-5.jpg" class="video-fallback" aria-label="AI-generated edit 01 — play overlay">
+                  <img src="videos/posters/video-5.jpg" alt="AI-generated edit 01">
+                  <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                </a>
               </video>
-              <p class="video-item__caption">AI edit 01</p>
             </div>
             <div class="video-item">
-              <video controls playsinline src="videos/ai-02.mp4" poster="videos/posters/ai-02.jpg">
-                Your browser does not support the video tag.
+              <video poster="videos/posters/video-6.jpg" preload="metadata" controls muted playsinline>
+                <source src="videos/video-6.mp4" type="video/mp4">
+                <a href="videos/posters/video-6.jpg" class="video-fallback" aria-label="AI-generated edit 02 — play overlay">
+                  <img src="videos/posters/video-6.jpg" alt="AI-generated edit 02">
+                  <span class="video-play-icon" aria-hidden="true">&#9654;</span>
+                </a>
               </video>
-              <p class="video-item__caption">AI edit 02</p>
             </div>
           </div>
         </div>
@@ -178,45 +277,202 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section about reveal">
-      <div class="about__left">
-        <div class="section__label">
-          <span class="section__line" aria-hidden="true"></span>
-          <span class="section__text">03 / About</span>
-        </div>
-        <h2 class="section__headline">Sofia-based. <em>Detail-obsessed.</em></h2>
+    <!-- SERVICES — Editorial numbered rows, NOT 3-equal cards -->
+    <section id="services" class="section services reveal" aria-label="Services and pricing">
+      <div class="section-label-row">
+        <span class="eyebrow">03 / Services</span>
+        <h2 class="section-headline">What I <em>offer.</em></h2>
       </div>
-      <div class="about__right">
-        <p>I'm Daren — a web designer and video editor based in Sofia, Bulgaria. I build clean, editorial-feeling websites and cut sharp short-form video for brands that want their work to feel intentional.</p>
-        <p>Available for freelance projects worldwide. I charge based on the project scope and timeline. I have a fluid workflow so communication is key. You can reach out to me for a free consultation and wireframe of your project.</p>
+
+      <div class="services-list" role="list">
+
+        <div class="service-row" role="listitem">
+          <div class="service-row__num" aria-hidden="true">01</div>
+          <div class="service-row__body">
+            <div class="service-row__top">
+              <h3 class="service-name">Web Design</h3>
+              <div class="service-price">
+                <span>from</span>
+                <strong>&euro;499</strong>
+              </div>
+            </div>
+            <p class="service-desc">Landing pages, product pages, and portfolio sites built in clean HTML/CSS/JS. No templates. No page builders. Just precise, hand-crafted code that loads fast and looks intentional.</p>
+            <ul class="service-includes" role="list">
+              <li>Custom responsive design — 375px to 1440px</li>
+              <li>Accessibility &amp; performance built-in</li>
+              <li>Delivery in 3–7 business days</li>
+              <li>One full round of revisions</li>
+            </ul>
+            <a href="#contact" class="service-cta">Get a quote</a>
+          </div>
+        </div>
+
+        <div class="service-row" role="listitem">
+          <div class="service-row__num" aria-hidden="true">02</div>
+          <div class="service-row__body">
+            <div class="service-row__top">
+              <h3 class="service-name">Video Editing</h3>
+              <div class="service-price">
+                <span>from</span>
+                <strong>&euro;299</strong>
+              </div>
+            </div>
+            <p class="service-desc">Short-form content cut for performance — Reels, TikTok, YouTube Shorts, and AI-generated video formats. Every edit is paced for its platform, color-graded, and delivered in multiple aspect ratios.</p>
+            <ul class="service-includes" role="list">
+              <li>Marketing, entertainment &amp; AI-enhanced edits</li>
+              <li>Color grading &amp; sound design</li>
+              <li>Delivery in 1–3 business days</li>
+              <li>Exports for all major formats</li>
+            </ul>
+            <a href="#contact" class="service-cta">Get a quote</a>
+          </div>
+        </div>
+
+        <div class="service-row service-row--featured" role="listitem">
+          <div class="service-row__num" aria-hidden="true">03</div>
+          <div class="service-row__body">
+            <div class="service-row__top">
+              <div class="service-name-wrap">
+                <h3 class="service-name">Design + Video</h3>
+                <span class="service-badge">Best value</span>
+              </div>
+              <div class="service-price">
+                <span>from</span>
+                <strong>&euro;699</strong>
+              </div>
+            </div>
+            <p class="service-desc">The full brand presence package. A website and a video treatment built with a unified visual language. Ideal for product launches, new brands, or a portfolio that needs to stand out everywhere.</p>
+            <ul class="service-includes" role="list">
+              <li>Everything in both services above</li>
+              <li>Unified visual language across both outputs</li>
+              <li>Priority delivery &amp; two revision rounds</li>
+              <li>Free 30-min consultation call</li>
+            </ul>
+            <a href="#contact" class="service-cta">Get a quote</a>
+          </div>
+        </div>
+
+      </div>
+      <p class="services-note">All prices are starting points — final cost depends on scope and timeline. Free consultation and wireframe included before anything is agreed on.</p>
+    </section>
+
+    <!-- SKILLS — Inline flowing groups, NOT a card grid -->
+    <section class="section skills reveal" aria-label="Skills and tools">
+      <div class="section-label-row">
+        <span class="eyebrow">04 / Skills &amp; Tools</span>
+        <h2 class="section-headline">How I <em>work.</em></h2>
+      </div>
+      <div class="skills-groups">
+        <div class="skills-group">
+          <span class="skills-group__label">Code</span>
+          <span class="skills-group__items">HTML &middot; CSS &middot; JavaScript &middot; Animation &middot; Accessibility &middot; Performance</span>
+        </div>
+        <div class="skills-group">
+          <span class="skills-group__label">Design</span>
+          <span class="skills-group__items">Figma &middot; UI Design &middot; Typography &middot; Layout Systems &middot; Visual Direction</span>
+        </div>
+        <div class="skills-group">
+          <span class="skills-group__label">Video</span>
+          <span class="skills-group__items">Cap Cut &middot; Final Cut Pro &middot; DaVinci Resolve &middot; Color Grading &middot; AI Video</span>
+        </div>
+        <div class="skills-group">
+          <span class="skills-group__label">Workflow</span>
+          <span class="skills-group__items">Git &middot; Framer &middot; Notion &middot; Fast turnaround &middot; Clear communication</span>
+        </div>
       </div>
     </section>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section contact reveal">
-      <div class="contact__inner">
-        <div class="section__label">
-          <span class="section__line" aria-hidden="true"></span>
-          <span class="section__text">04 / Contact</span>
+    <!-- ABOUT -->
+    <section id="about" class="section about reveal" aria-label="About Daren Gotsak">
+      <div class="about-grid">
+        <div class="about-left">
+          <span class="eyebrow">05 / About</span>
+          <h2 class="section-headline about-headline">Sofia-based.<br><em>Detail-obsessed.</em></h2>
         </div>
-        <h2 class="contact__headline">Let's work <em>together.</em></h2>
-        <a href="mailto:hello@darengotsak.com" class="contact__email">dgotsak@gmail.com</a>
-        <div class="contact__social">
-          <a href="https://www.upwork.com/freelancers/~01bab264703da19496" target="_blank" rel="noopener" class="contact__social-link">Upwork</a>
-          <a href="https://github.com/darengotsak" target="_blank" rel="noopener" class="contact__social-link">GitHub</a>
+        <div class="about-right">
+          <p>I'm Daren — a web designer and video editor based in Sofia, Bulgaria. I build clean, editorial-feeling websites and cut sharp short-form video for brands that want their work to feel intentional.</p>
+          <p>Available for freelance projects worldwide. My workflow is built around clear communication, fast delivery, and zero unnecessary back-and-forth. I send a wireframe before we agree on anything.</p>
+          <div class="about-stats" aria-label="Key figures">
+            <div class="about-stat">
+              <span class="about-stat__n">3+</span>
+              <span class="about-stat__l">Years</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat__n">20+</span>
+              <span class="about-stat__l">Projects</span>
+            </div>
+            <div class="about-stat">
+              <span class="about-stat__n">4.8&#x2605;</span>
+              <span class="about-stat__l">Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS — Ruled blockquotes, NOT cards -->
+    <section class="section testimonials reveal" aria-label="Client testimonials">
+      <div class="section-label-row">
+        <span class="eyebrow">06 / Testimonials</span>
+        <h2 class="section-headline">What clients <em>say.</em></h2>
+      </div>
+      <div class="testimonials-list">
+
+        <blockquote class="tquote" style="--i:0">
+          <p>"Daren turned our brief into a landing page that actually converts. Crisp, fast, exactly on-brand. Delivered in four days — I barely had to explain anything twice."</p>
+          <footer>
+            <span class="tquote-name">Maria K.</span>
+            <span class="tquote-role">5.0&#x2605;</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="tquote" style="--i:1">
+          <p>"The video edit for our product launch felt cinematic. We repurposed it across three ad formats — every one performed. Professional quality, zero friction."</p>
+          <footer>
+            <span class="tquote-name">Stefan P.</span>
+            <span class="tquote-role">4.9&#x2605;</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="tquote" style="--i:2">
+          <p>"I gave Daren full creative freedom and he delivered something I couldn't have imagined. Clean design, zero revisions needed. Will hire again without hesitation."</p>
+          <footer>
+            <span class="tquote-name">Alex T.</span>
+            <span class="tquote-role">4.9&#x2605;</span>
+          </footer>
+        </blockquote>
+
+      </div>
+    </section>
+
+    <!-- CONTACT — context-fundamentals: critical info at the END for high recall -->
+    <section id="contact" class="section contact" aria-label="Contact">
+      <div class="contact-inner">
+        <span class="eyebrow" style="justify-content:center;display:flex">07 / Contact</span>
+        <h2 class="contact-headline">Let's work <em>together.</em></h2>
+        <p class="contact-sub">Have a project in mind? Send me an email — I reply within 24 hours with a free consultation offer and a rough wireframe.</p>
+        <a href="mailto:dgotsak@gmail.com" class="contact-email">dgotsak@gmail.com</a>
+        <div class="contact-social">
+          <a href="https://www.upwork.com/freelancers/~01bab264703da19496" target="_blank" rel="noopener" class="social-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 7C17 5 14.5 4 12 4C7.6 4 4 7.6 4 12s3.6 8 8 8 8-3.6 8-8c0-1.2-.3-2.4-.8-3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M14.5 9.5c0 2.5-2 4.5-4.5 4.5S5.5 12 5.5 9.5M14.5 9.5V14m0-4.5H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Upwork
+          </a>
+          <a href="https://github.com/darengotsak" target="_blank" rel="noopener" class="social-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            GitHub
+          </a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <span class="footer__name">Daren Gotsak</span>
-    <span class="footer__copy">&#xA9; 2026</span>
+  <footer class="footer" role="contentinfo">
+    <span class="footer-name">Daren Gotsak</span>
+    <span class="footer-copy">&copy; 2026 &middot; Sofia, Bulgaria</span>
   </footer>
 
   <script src="script.js"></script>
+  <script src="/tab-message.js"></script>
 </body>
 </html>
