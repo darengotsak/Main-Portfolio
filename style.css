@@ -549,6 +549,7 @@ a, button { touch-action: manipulation; }
 /* ============================================================
    VIDEOS
    ============================================================ */
+
 .videos-groups { display: flex; flex-direction: column; gap: 72px; }
 .video-group-label {
   display: block;
@@ -566,12 +567,21 @@ a, button { touch-action: manipulation; }
   grid-template-columns: repeat(2, minmax(0, 320px));
   gap: 20px;
 }
+.video-item {
+  position: relative;
+}
 .video-item video {
   width: 100%;
   aspect-ratio: 9/16;
   background: var(--bg-2);
   object-fit: cover;
   border: 1px solid var(--border);
+  transition: border-color 0.3s, box-shadow 0.3s var(--ease);
+  display: block;
+}
+.video-item:hover video {
+  border-color: var(--border-2);
+  box-shadow: 0 12px 48px -12px rgba(14,12,10,0.65);
 }
 .video-caption {
   margin-top: 10px;
