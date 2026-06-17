@@ -641,7 +641,7 @@ a, button { touch-action: manipulation; }
   transition: background 0.2s;
 }
 .service-row:last-child { border-bottom: 1px solid var(--border); }
-.service-row--featured { background: var(--bg-2); padding-left: 24px; padding-right: 24px; margin: 0 -24px; }
+.service-row--featured { background: var(--bg-2); }
 .service-row:hover { background: rgba(240,234,226,0.025); }
 .service-row--featured:hover { background: var(--bg-3); }
 
@@ -1029,7 +1029,6 @@ a, button { touch-action: manipulation; }
 
   .work-row__meta { padding: 32px 24px; }
   .service-row { grid-template-columns: 40px 1fr; padding: 36px 0; }
-  .service-row--featured { padding-left: 16px; padding-right: 16px; margin: 0 -16px; }
   .skills-group { grid-template-columns: 70px 1fr; gap: 16px; }
 
   .about-stats { flex-direction: column; gap: 0; }
